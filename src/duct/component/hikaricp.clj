@@ -29,6 +29,6 @@
       (assoc component :spec (make-spec component))))
   (stop [component]
     (if-let [spec (:spec component)]
-      (do (.close (:datasource component))
+      (do (.close (:datasource spec))
           (dissoc component :spec))
       component)))
