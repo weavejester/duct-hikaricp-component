@@ -11,7 +11,7 @@ in the [Duct][] framework.
 
 Add the following dependency to your `project.clj`:
 
-    [duct/hikaricp-component "0.1.0-SNAPSHOT"]
+    [duct/hikaricp-component "0.1.0"]
 
 ## Usage
 
