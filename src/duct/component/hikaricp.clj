@@ -32,3 +32,7 @@
       (do (.close (:datasource spec))
           (dissoc component :spec))
       component)))
+
+(defn hikaricp [options]
+  {:pre [(:uri options)]}
+  (map->HikariCP options))
