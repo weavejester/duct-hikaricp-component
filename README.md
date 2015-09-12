@@ -4,7 +4,7 @@ A [component][] for the [HikariCP][] JDBC connection pool, designed to be used
 in the [Duct][] framework.
 
 [component]: https://github.com/stuartsierra/component
-[hikaricp]:  https://github.com/ring-clojure/ring
+[hikaricp]:  https://github.com/brettwooldridge/HikariCP
 [duct]:      https://github.com/weavejester/duct
 
 ## Installation
