@@ -4,18 +4,20 @@
 
 (defn- make-config
   [{:keys [uri username password auto-commit? conn-timeout idle-timeout
-           max-lifetime conn-test-query min-idle max-pool-size pool-name]}]
+           max-lifetime conn-test-query min-idle max-pool-size pool-name
+           connection-test-query]}]
   (let [cfg (HikariConfig.)]
-    (when uri                  (.setJdbcUrl cfg uri))
-    (when username             (.setUsername cfg username))
-    (when password             (.setPassword cfg password))
-    (when (some? auto-commit?) (.setAutoCommit cfg auto-commit?))
-    (when conn-timeout         (.setConnectionTimeout cfg conn-timeout))
-    (when idle-timeout         (.setIdleTimeout cfg conn-timeout))
-    (when max-lifetime         (.setMaxLifetime cfg max-lifetime))
-    (when max-pool-size        (.setMaximumPoolSize cfg max-pool-size))
-    (when min-idle             (.setMinimumIdle cfg min-idle))
-    (when pool-name            (.setPoolName cfg pool-name))
+    (when uri                   (.setJdbcUrl cfg uri))
+    (when username              (.setUsername cfg username))
+    (when password              (.setPassword cfg password))
+    (when (some? auto-commit?)  (.setAutoCommit cfg auto-commit?))
+    (when conn-timeout          (.setConnectionTimeout cfg conn-timeout))
+    (when idle-timeout          (.setIdleTimeout cfg conn-timeout))
+    (when max-lifetime          (.setMaxLifetime cfg max-lifetime))
+    (when max-pool-size         (.setMaximumPoolSize cfg max-pool-size))
+    (when min-idle              (.setMinimumIdle cfg min-idle))
+    (when pool-name             (.setPoolName cfg pool-name))
+    (when connection-test-query (.setConnectionTestQuery cfg connection-test-query))
     cfg))
 
 (defn- make-spec [component]
